@@ -5,22 +5,21 @@ const Login = (props) => {
   const login = async (event) => {
     event.preventDefault()
     try {
-      const response = auth.signIn(
+      const response = await auth.signIn(
         event.target.children.email.value, 
         event.target.children.password.value
       )
-
-      props.authenticate(response.data.status)
+      props.authenticate(response.success)
     } catch(error) {
       console.log(error.response.data)
     }
   }
 
   return (
-    <form onSubmit={login}>
-      <input placeholder="Email" id="email"/>
-      <input placeholder="Password" id="password" type="password"/>
-      <button>Login</button>
+    <form data-cy="login-form" onSubmit={login}>
+      <input data-cy="email" placeholder="Email" id="email"/>
+      <input data-cy="password" placeholder="Password" id="password" type="password"/>
+      <button data-cy="submit">Login</button>
     </form>
   )
 }

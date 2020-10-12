@@ -6,7 +6,7 @@ const App = () => {
   const [authenticated, setAuthenticated] = useState(false)
 
   return (
-    <div>
+    <>
       { authenticated ? (
         <CreateArticle />
       ) : (
@@ -14,7 +14,7 @@ const App = () => {
           authenticate={(authStatus) => setAuthenticated(authStatus)}
         />
       )}
-    </div>
+    </>
   )
 }
 
