@@ -2,7 +2,8 @@ import axios from 'axios'
 import headers from './headers'
 
 const Articles = {
-  async create(title, content) {
+  async create(title, content, image) {
+    debugger;
     try {
       let result = await axios.post("/articles", {
         article: {

@@ -3,7 +3,7 @@ import CreateArticle from './components/CreateArticle'
 import Login from './components/Login'
 
 const App = () => {
-  const [authenticated, setAuthenticated] = useState(false)
+  const [authenticated, setAuthenticated] = useState(true)
 
   return (
     <>
