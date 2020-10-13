@@ -8,7 +8,10 @@ const Articles = {
       let result = await axios.post("/articles", {
         article: {
           title: title,
-          content: content
+          content: content,
+          image: image,
+          lead: 'Lead',
+          category: 'news'
         }
       }, {
         headers: headers()
